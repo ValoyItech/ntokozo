@@ -35,164 +35,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        html, body {
-            height: 100%;
-            box-sizing: border-box;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #000000 0%, #333333 50%, #1a1a1a 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* ----------  MOBILE “NO-HORIZONTAL-SCROLL” RESET  ---------- */
+html,body{overflow-x:hidden;width:100%}
+*{box-sizing:border-box;margin:0;padding:0}
+img,video,iframe{max-width:100%;height:auto;display:block}
+/* ----------------------------------------------------------- */
 
-        /* Floating animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        /* Pulse animation */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .pulse-animation {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        /* Animated dark backgrounds */
-        .animated-dark-bg {
-            background: linear-gradient(45deg, #000000, #1a1a1a, #333333, #0f0f0f);
-            background-size: 400% 400%;
-            animation: darkGradientFlow 12s ease infinite;
-        }
-        
-        @keyframes darkGradientFlow {
-            0% { background-position: 0% 50%; }
-            25% { background-position: 100% 50%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Floating particles effect */
-        .animated-dark-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 1px, transparent 1px),
-                radial-gradient(circle at 40% 40%, rgba(255,255,255,0.06) 1px, transparent 1px);
-            background-size: 100px 100px, 150px 150px, 200px 200px;
-            animation: particleFloat 20s linear infinite;
-            pointer-events: none;
-        }
-        
-        @keyframes particleFloat {
-            0% { transform: translateY(0px) translateX(0px); }
-            25% { transform: translateY(-20px) translateX(10px); }
-            50% { transform: translateY(-10px) translateX(-5px); }
-            75% { transform: translateY(-30px) translateX(15px); }
-            100% { transform: translateY(0px) translateX(0px); }
-        }
-        
-        /* Animated icon backgrounds */
-        .animated-icon-bg {
-            background: linear-gradient(135deg, #000000, #333333, #1a1a1a);
-            background-size: 300% 300%;
-            animation: iconGradientSpin 6s ease infinite;
-        }
-        
-        @keyframes iconGradientSpin {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .animated-icon-bg::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            border-radius: 50%;
-            animation: iconShimmer 3s linear infinite;
-            z-index: -1;
-        }
-        
-        @keyframes iconShimmer {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Timeline styles */
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: #000;
-            border-radius: 50%;
-            z-index: 2;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 1.5rem;
-            width: 2px;
-            height: calc(100% - 1rem);
-            background: #e5e7eb;
-            z-index: 1;
-        }
-        
-        .timeline-item:last-child::after {
-            display: none;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-            }
-        }
-
-        
+/* (keep every style that was already here – just paste them after the block above) */
+.hero-gradient{background:linear-gradient(135deg,#000 0%,#333 50%,#1a1a1a 100%);background-size:400% 400%;animation:gradientShift 8s ease infinite}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.fade-in{animation:fadeIn .8s ease-in}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-animation{animation:float 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.pulse-animation{animation:pulse 2s ease-in-out infinite}
+.animated-dark-bg{background:linear-gradient(45deg,#000,#1a1a1a,#333,#0f0f0f);background-size:400% 400%;animation:darkGradientFlow 12s ease infinite;position:relative}
+@keyframes darkGradientFlow{0%{background-position:0% 50%}25%{background-position:100% 50%}50%{background-position:100% 100%}75%{background-position:0% 100%}100%{background-position:0% 50%}}
+.animated-dark-bg::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(circle at 20% 80%,rgba(255,255,255,.1) 1px,transparent 1px),radial-gradient(circle at 80% 20%,rgba(255,255,255,.08) 1px,transparent 1px),radial-gradient(circle at 40% 40%,rgba(255,255,255,.06) 1px,transparent 1px);background-size:100px 100px,150px 150px,200px 200px;animation:particleFloat 20s linear infinite;pointer-events:none}
+@keyframes particleFloat{0%{transform:translateY(0) translateX(0)}25%{transform:translateY(-20px) translateX(10px)}50%{transform:translateY(-10px) translateX(-5px)}75%{transform:translateY(-30px) translateX(15px)}100%{transform:translateY(0) translateX(0)}}
+.animated-icon-bg{background:linear-gradient(135deg,#000,#333,#1a1a1a);background-size:300% 300%;animation:iconGradientSpin 6s ease infinite;position:relative}
+@keyframes iconGradientSpin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.animated-icon-bg::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(45deg,transparent,rgba(255,255,255,.1),transparent);border-radius:50%;animation:iconShimmer 3s linear infinite;z-index:-1}
+@keyframes iconShimmer{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.timeline-item{position:relative;padding-left:2rem}
+.timeline-item::before{content:'';position:absolute;left:0;top:.5rem;width:12px;height:12px;background:#000;border-radius:50%;z-index:2}
+.timeline-item::after{content:'';position:absolute;left:5px;top:1.5rem;width:2px;height:calc(100% - 1rem);background:#e5e7eb;z-index:1}
+.timeline-item:last-child::after{display:none}
     </style>
     
 </head>
