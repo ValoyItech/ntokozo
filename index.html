@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+<title>Luxe Domestic Services - Premium Home Cleaning</title>
+<meta name="title" content="Luxe Domestic Services - Premium Home Cleaning">
+<meta name="description" content="Experience luxury home and office cleaning in South Africa. Luxe Domestic Services offers deep cleaning, nanny & housekeeping, and sanitization solutions for families and businesses.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luxedomesticservices.co.za/">
+<meta property="og:title" content="Luxe Domestic Services - Premium Home Cleaning">
+<meta property="og:description" content="Professional cleaning and housekeeping solutions. Trusted by 500+ families. Book your luxury cleaning service today.">
+<meta property="og:image" content="https://luxedomesticservices.co.za/images/logo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://luxedomesticservices.co.za/">
+<meta property="twitter:title" content="Luxe Domestic Services - Premium Home Cleaning">
+<meta property="twitter:description" content="Luxury home and office cleaning services — experience the difference with Luxe Domestic Services.">
+<meta property="twitter:image" content="https://luxedomesticservices.co.za/images/logo.png">
+
+<!-- Additional SEO -->
+<meta name="keywords" content="Luxe Domestic Services, cleaning, housekeeping, nanny, deep cleaning, home cleaning, office cleaning, Johannesburg, Sandton, South Africa">
+<meta name="author" content="Luxe Domestic Services">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#000000">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            box-sizing: border-box;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Slider Styles */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(51,51,51,0.6) 100%);
+        }
+        
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            padding: 1rem;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .slide {
+                height: 100vh;
+                min-height: 600px;
+            }
+            
+            .slide-content {
+                padding: 2rem 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                width: 100%;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+            
+            .hero-text {
+                text-align: center;
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem !important;
+                line-height: 1.1;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem !important;
+                margin-bottom: 2rem;
+                line-height: 1.4;
+                text-align: center;
+                padding: 0 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .hero-buttons button {
+                width: 100%;
+                max-width: 100%;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                box-sizing: border-box;
+            }
+            
+            .slider-nav {
+                display: none;
+            }
+            
+            .slider-dots {
+                bottom: 20px;
+            }
+        }
+        
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 20;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-nav:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .slider-nav.prev {
+            left: 30px;
+        }
+        
+        .slider-nav.next {
+            right: 30px;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .slide-animate {
+            animation: slideInUp 1s ease-out;
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50" data-aos="fade-down">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center" data-aos="fade-right" data-aos-delay="100">
+      <img src="images/logo.png" 
+     alt="Logo" 
+     class="h-8 w-8 mr-3 rounded-lg float-animation object-cover" />
+
+                    <span class="text-2xl font-bold text-black">Luxe Domestic Services</span>
+                </div>
+                <div class="hidden md:flex space-x-8" data-aos="fade-left" data-aos-delay="200">
+                    <a href="#home" class="text-gray-700 hover:text-black transition duration-300">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-black transition duration-300">Services</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-black transition duration-300">Gallery</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-black transition duration-300">Reviews</a>
+                    <a href="about.html" class="text-gray-700 hover:text-black transition duration-300">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-black transition duration-300">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <button onclick="openWhatsApp('quote')" class="hidden md:block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300 pulse-animation" data-aos="fade-left" data-aos-delay="300">
+                        Get Quote
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden ml-4 p-2 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobileSidebar" class="fixed inset-0 z-50 hidden">
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
+        
+        <!-- Sidebar -->
+        <div class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out" id="sidebarPanel">
+            <div class="p-6">
+                <!-- Close button -->
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center">
+                        <img src="images/logo.png" 
+     alt="Logo" 
+     class="h-6 w-6 mr-2 rounded-lg float-animation object-cover" />
+
+                        <span class="text-lg font-bold text-black">Luxe Domestic</span>
+                    </div>
+                    <button onclick="toggleMobileMenu()" class="p-2 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="space-y-4 mb-8">
+                    <a href="#home" onclick="toggleMobileMenu()" class="flex items-center py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        Home
+                    </a>
+                    <a href="#services" onclick="toggleMobileMenu()" class="flex items-center py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Services
+                    </a>
+                    <a href="#gallery" onclick="toggleMobileMenu()" class="flex items-center py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                        </svg>
+                        Gallery
+                    </a>
+                    <a href="#testimonials" onclick="toggleMobileMenu()" class="flex items-center py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        Reviews
+                    </a>
+                    <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        About
+                    </a>
+                    <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center py-3 px-4 text-gray-700 hover:text-black hover:bg-gray-50 rounded-lg transition duration-300">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        Contact
+                    </a>
+                </nav>
+                
+                <!-- Get Quote Button -->
+                <button onclick="openWhatsApp('quote')" class="w-full bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition duration-300 pulse-animation mb-6">
+                    Get Quote
+                </button>
+                
+                <!-- Contact Info -->
+                <div class="border-t pt-6 space-y-4">
+                    <div class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <span>+27 60 948 8775</span>
+                    </div>
+                    <button onclick="openWhatsApp('mobile-contact')" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+                        </svg>
+                        Chat on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="slider-container text-white pt-16" style="height: 100vh; position: relative;">
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('images/hero1.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+                <div class="hero-text slide-animate text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center">
+                        Premium Home Cleaning
+                    </h1>
+                    <p class="hero-subtitle text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-gray-300 max-w-3xl mx-auto px-4 md:px-0 text-center">
+                        Experience luxury cleaning services that transform your home into a pristine sanctuary. Professional, reliable, and tailored to your needs.
+                    </p>
+                    <div class="hero-buttons flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center items-center">
+                        <button onclick="openWhatsApp('book')" class="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-gray-100 transition duration-300 w-full sm:w-auto" data-aos="fade-right" data-aos-delay="300">
+                            Book Now
+                        </button>
+                        <button onclick="scrollToServices()" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto" data-aos="fade-left" data-aos-delay="300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('images/hero2.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+                <div class="hero-text slide-animate text-center">
+                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center">
+                        Deep Cleaning Specialists
+                    </h1>
+                    <p class="hero-subtitle text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-gray-300 max-w-3xl mx-auto px-4 md:px-0 text-center">
+                        From move-in cleanings to seasonal deep cleans, we handle every detail with precision and care.
+                    </p>
+                    <div class="hero-buttons flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center items-center">
+                        <button onclick="openWhatsApp('deep-clean')" class="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-gray-100 transition duration-300 w-full sm:w-auto">
+                            Get Deep Clean Quote
+                        </button>
+                        <button onclick="scrollToServices()" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+                            View Services
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('images/hero3.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+                <div class="hero-text slide-animate text-center">
+                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center">
+                        Trusted by 500+ Families
+                    </h1>
+                    <p class="hero-subtitle text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-gray-300 max-w-3xl mx-auto px-4 md:px-0 text-center">
+                        Join hundreds of satisfied customers who trust Luxe for their home cleaning needs.
+                    </p>
+                    <div class="hero-buttons flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center items-center">
+                        <button onclick="openWhatsApp('testimonial')" class="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-gray-100 transition duration-300 w-full sm:w-auto">
+                            Join Our Family
+                        </button>
+                        <button onclick="scrollToAbout()" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-white hover:text-black transition duration-300 w-full sm:w-auto">
+                            Read Reviews
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="slider-nav prev" onclick="changeSlide(-1)">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        <button class="slider-nav next" onclick="changeSlide(1)">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+
+        <!-- Dots Navigation -->
+        <div class="slider-dots">
+            <div class="dot active" onclick="goToSlide(1)"></div>
+            <div class="dot" onclick="goToSlide(2)"></div>
+            <div class="dot" onclick="goToSlide(3)"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-black mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive cleaning solutions designed to exceed your expectations
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Residential Cleaning</h3>
+                    <p class="text-gray-600 mb-6">Complete home cleaning services tailored to your family's needs and schedule.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 flex-grow">
+                        <li>✓ Weekly, bi-weekly, monthly service</li>
+                        <li>✓ All rooms thoroughly cleaned</li>
+                        <li>✓ Kitchen and bathroom sanitization</li>
+                    </ul>
+                    <button onclick="openWhatsApp('residential-cleaning')" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300 mt-auto">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Office Cleaning</h3>
+                    <p class="text-gray-600 mb-6">Professional commercial cleaning services to maintain a productive work environment.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 flex-grow">
+                        <li>✓ Daily, weekly, or monthly service</li>
+                        <li>✓ Workstation and common area cleaning</li>
+                        <li>✓ Restroom and kitchen maintenance</li>
+                    </ul>
+                    <button onclick="openWhatsApp('office-cleaning')" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300 mt-auto">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Nanny & Housekeeping Services</h3>
+                    <p class="text-gray-600 mb-6">Trusted childcare and household management services for busy families.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 flex-grow">
+                        <li>✓ Professional nanny services</li>
+                        <li>✓ Household organization</li>
+                        <li>✓ Meal preparation assistance</li>
+                    </ul>
+                    <button onclick="openWhatsApp('nanny-housekeeping')" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300 mt-auto">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Bulk Cleaning Supplies</h3>
+                    <p class="text-gray-600 mb-6">High-quality cleaning products and supplies delivered to your home or office.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 flex-grow">
+                        <li>✓ Eco-friendly cleaning products</li>
+                        <li>✓ Bulk pricing for businesses</li>
+                        <li>✓ Regular delivery schedules</li>
+                    </ul>
+                    <button onclick="openWhatsApp('bulk-supplies')" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300 mt-auto">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Deep Cleaning & Disinfection</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive sanitization and deep cleaning for health and safety.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 flex-grow">
+                        <li>✓ Hospital-grade disinfection</li>
+                        <li>✓ Move-in/move-out cleaning</li>
+                        <li>✓ Post-construction cleanup</li>
+                    </ul>
+                    <button onclick="openWhatsApp('deep-disinfection')" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300 mt-auto">
+                        Get Quote
+                    </button>
+                </div>
+
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 pulse-animation">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Laundry & Ironing Services</h3>
+                    <p class="text-gray-600 mb-6">Professional laundry care and ironing services to save you time.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 flex-grow">
+                        <li>✓ Wash, dry, and fold service</li>
+                        <li>✓ Professional ironing and pressing</li>
+                        <li>✓ Pickup and delivery available</li>
+                    </ul>
+                    <button onclick="openWhatsApp('laundry-ironing')" class="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300 mt-auto">
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-black mb-4">Our Work Gallery</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        See the transformation we bring to homes and offices across the metropolitan area
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Gallery Item 1 -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/living.jpg" alt="Living Room Deep Clean" 
+             class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+          <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl font-bold mb-2">Living Room Deep Clean</h3>
+            <p class="text-sm">Complete furniture and carpet cleaning</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/post.jpg" alt="Kitchen Sanitization" 
+             class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+          <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl font-bold mb-2">Kitchen Sanitization</h3>
+            <p class="text-sm">Professional appliance and surface cleaning</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/office.jpg" alt="Office Space Cleaning" 
+             class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+          <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl font-bold mb-2">Office Space Cleaning</h3>
+            <p class="text-sm">Commercial workspace maintenance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/bath.jpg" alt="Bathroom Deep Clean" 
+             class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+          <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl font-bold mb-2">Bathroom Deep Clean</h3>
+            <p class="text-sm">Complete sanitization and disinfection</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="500">
+        <img src="images/event.jpg" alt="Post-Event Cleanup" 
+             class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+          <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl font-bold mb-2">Post-Event Cleanup</h3>
+            <p class="text-sm">Party and event restoration service</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Item 6 -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="600">
+        <img src="images/laundry.jpg" alt="Laundry Services" 
+             class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+          <div class="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl font-bold mb-2">Laundry Services</h3>
+            <p class="text-sm">Professional washing and ironing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="700">
+      <button onclick="openWhatsApp('gallery')" 
+              class="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition duration-300 pulse-animation">
+        See Your Space Transformed
+      </button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Client Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-black mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Hear from families and businesses who trust Luxe Domestic Services
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Luxe Domestic Services transformed our home completely! Their attention to detail is incredible, and the team is so professional. We've been using their bi-weekly service for over a year now."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black">Sarah Mitchell</h4>
+                            <p class="text-gray-500 text-sm">Homeowner, Sandton</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Our office has never looked better! Luxe handles our weekly cleaning and their consistency is outstanding. The team is reliable, thorough, and always professional."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MJ
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black">Michael Johnson</h4>
+                            <p class="text-gray-500 text-sm">Office Manager, Rosebank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The deep cleaning service was amazing! They helped us prepare for our move-in and every corner was spotless. Their nanny service has also been a blessing for our family."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            LP
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-black">Lisa Patel</h4>
+                            <p class="text-gray-500 text-sm">Family, Johannesburg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                <button onclick="openWhatsApp('testimonials')" class="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition duration-300 pulse-animation">
+                    Join Our Happy Clients
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold text-black mb-6">Why Choose Luxe?</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        With over 10 years of experience, Luxe Domestic Services has built a reputation for excellence in home cleaning. We combine professional expertise with personalized service to deliver results that exceed expectations.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center mr-4 float-animation">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-lg">Fully insured and bonded</span>
+                        </div>
+                        <div class="flex items-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center mr-4 float-animation">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-lg">Eco-friendly cleaning products</span>
+                        </div>
+                        <div class="flex items-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center mr-4 float-animation">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-lg">100% satisfaction guarantee</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-xl p-8" data-aos="fade-left">
+                    <div class="text-center">
+                        <div class="text-6xl font-bold text-black mb-2 pulse-animation">500+</div>
+                        <div class="text-xl text-gray-600 mb-6">Happy Customers</div>
+                        <div class="flex justify-center space-x-1 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 italic" data-aos="fade-up" data-aos-delay="500">"Exceptional service and attention to detail. My home has never looked better!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Get Your Free Quote</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Ready to experience luxury cleaning? Contact us today for a personalized quote.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form class="space-y-6" onsubmit="handleWhatsAppSubmit(event)">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="fullName" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Service Needed</label>
+                            <select id="service" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white" required>
+                                <option value="">Select a service</option>
+                                <option value="Regular House Cleaning">Regular House Cleaning</option>
+                                <option value="Deep Cleaning">Deep Cleaning</option>
+                                <option value="Post-Event Cleaning">Post-Event Cleaning</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white" placeholder="Tell us about your cleaning needs..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-black py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 pulse-animation">
+                            Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="space-y-8" data-aos="fade-left">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center" data-aos="fade-up" data-aos-delay="100">
+                                <svg class="w-6 h-6 mr-4 float-animation" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                <span>+27 60 948 8775</span>
+                            </div>
+                            <div class="flex items-center" data-aos="fade-up" data-aos-delay="200">
+                                <svg class="w-6 h-6 mr-4 float-animation" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <span>info@luxedomesticservices.co.za</span>
+                            </div>
+                            <div class="flex items-center" data-aos="fade-up" data-aos-delay="300">
+                                <svg class="w-6 h-6 mr-4 float-animation" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Serving Greater Metropolitan Area</span>
+                            </div>
+                            <div class="flex items-center" data-aos="fade-up" data-aos-delay="400">
+                                <svg class="w-6 h-6 mr-4 float-animation text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+                                </svg>
+                                <span>WhatsApp: +27 60 948 8775</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-2xl font-bold mb-4">Business Hours</h3>
+                        <div class="space-y-2 text-gray-300">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday:</span>
+                                <span>8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday:</span>
+                                <span>9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday:</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-lg" data-aos="zoom-in" data-aos-delay="600">
+                        <h4 class="text-xl font-bold mb-3">Quick Contact</h4>
+                        <button onclick="openWhatsApp('quick-contact')" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+                            </svg>
+                            Chat on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-1" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <img src="images/footer.png" 
+     alt="Logo" 
+     class="h-8 w-8 mr-3 rounded-lg float-animation object-cover" />
+
+                        <span class="text-xl font-bold">Luxe Domestic Services</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Premium cleaning, housekeeping, and nanny care for homes and offices. We create spotless & comfortable spaces from residential and office cleaning to bulk cleaning supplies — we deliver cleanliness, convenience, and care you can trust.
+                    </p>
+                    <!-- Social Media -->
+                    <div class="flex space-x-4">
+                        <a href="https://www.tiktok.com/@domesticluxehub?_t=ZS-90Nvy0qkGQh&_r=1" target="_blank" rel="noopener noreferrer" class="bg-gray-800 p-3 rounded-lg hover:bg-gray-700 transition duration-300 pulse-animation">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                            </svg>
+                        </a>
+                        <button onclick="openWhatsApp('social')" class="bg-green-600 p-3 rounded-lg hover:bg-green-700 transition duration-300 pulse-animation">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-lg font-bold mb-4 text-white">Our Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition duration-300">Regular House Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Deep Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Post-Event Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Office Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Housekeeping Services</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Nanny Care</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Bulk Cleaning Supplies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-lg font-bold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
+                        <li><button onclick="openWhatsApp('quote')" class="hover:text-white transition duration-300 text-left">Get Quote</button></li>
+                        <li><button onclick="openWhatsApp('book')" class="hover:text-white transition duration-300 text-left">Book Now</button></li>
+                        <li><button onclick="openWhatsApp('emergency')" class="hover:text-white transition duration-300 text-left">Emergency Cleaning</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-lg font-bold mb-4 text-white">Contact Information</h3>
+                    <div class="space-y-4 text-gray-400">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 mr-3 mt-1 flex-shrink-0 float-animation" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Service Area</p>
+                                <p>Greater Metropolitan Area</p>
+                                <p>Residential & Commercial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 float-animation" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Phone</p>
+                                <p>+27 60 948 8775</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 float-animation" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-white">Email</p>
+                                <p>info@luxedomesticservices.co.za</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-gray-400">&copy; 2024 Luxe Domestic Services. All rights reserved.</p>
+                    </div>
+                    <div class="flex space-x-6 text-sm text-gray-400">
+                        <button onclick="openWhatsApp('privacy')" class="hover:text-white transition duration-300">Privacy Policy</button>
+                        <button onclick="openWhatsApp('terms')" class="hover:text-white transition duration-300">Terms of Service</button>
+                        <button onclick="openWhatsApp('insurance')" class="hover:text-white transition duration-300">Insurance Info</button>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="text-gray-500 text-sm">
+                        🏆 Trusted by 500+ families • ⭐ 5-star rated service • 🛡️ Fully insured & bonded • 🌿 Eco-friendly products
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Hero Slider Variables
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        // Show specific slide
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            
+            // Trigger slide animation
+            const slideContent = slides[currentSlide].querySelector('.slide-animate');
+            if (slideContent) {
+                slideContent.style.animation = 'none';
+                slideContent.offsetHeight; // Trigger reflow
+                slideContent.style.animation = 'slideInUp 1s ease-out';
+            }
+        }
+
+        // Next slide
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Go to specific slide
+        function goToSlide(n) {
+            showSlide(n - 1);
+        }
+
+        // Auto-advance slides
+        function autoSlide() {
+            changeSlide(1);
+        }
+
+        // Start auto-slide
+        let slideInterval = setInterval(autoSlide, 5000);
+
+        // Pause auto-slide on hover
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoSlide, 5000);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('mobileSidebar');
+            const sidebarPanel = document.getElementById('sidebarPanel');
+            
+            if (sidebar.classList.contains('hidden')) {
+                sidebar.classList.remove('hidden');
+                setTimeout(() => {
+                    sidebarPanel.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                sidebarPanel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    sidebar.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // WhatsApp Integration
+        const whatsappNumber = '27609488775';
+
+        function openWhatsApp(type, customMessage = '') {
+            let message = '';
+            
+            switch(type) {
+                case 'quote':
+                    message = 'Hi! I would like to get a quote for cleaning services from Luxe Domestic Services.';
+                    break;
+                case 'book':
+                    message = 'Hi! I would like to book a cleaning service with Luxe Domestic Services.';
+                    break;
+                case 'deep-clean':
+                    message = 'Hi! I\'m interested in your deep cleaning services. Could you provide more information?';
+                    break;
+                case 'testimonial':
+                    message = 'Hi! I saw your testimonials and would like to join your family of satisfied customers.';
+                    break;
+                case 'regular-cleaning':
+                    message = 'Hi! I\'m interested in regular house cleaning services. Could you provide a quote?';
+                    break;
+                case 'deep-cleaning':
+                    message = 'Hi! I need a deep cleaning service. Could you provide pricing and availability?';
+                    break;
+                case 'post-event-cleaning':
+                    message = 'Hi! I need post-event cleaning services. Could you help me with this?';
+                    break;
+                case 'quick-contact':
+                    message = 'Hi! I found your website and would like to know more about your cleaning services.';
+                    break;
+                case 'social':
+                    message = 'Hi! I found you through social media and I\'m interested in your cleaning services.';
+                    break;
+                case 'emergency':
+                    message = 'Hi! I need emergency cleaning services. Can you help me with urgent cleaning?';
+                    break;
+                case 'residential-cleaning':
+                    message = 'Hi! I\'m interested in your residential cleaning services. Could you provide pricing and scheduling options?';
+                    break;
+                case 'office-cleaning':
+                    message = 'Hi! I need office cleaning services for my business. Could you provide a commercial cleaning quote?';
+                    break;
+                case 'nanny-housekeeping':
+                    message = 'Hi! I\'m interested in your nanny and housekeeping services. Could you provide more information?';
+                    break;
+                case 'bulk-supplies':
+                    message = 'Hi! I\'m interested in bulk cleaning supplies. Could you provide pricing and delivery options?';
+                    break;
+                case 'deep-disinfection':
+                    message = 'Hi! I need deep cleaning and disinfection services. Could you provide a quote?';
+                    break;
+                case 'laundry-ironing':
+                    message = 'Hi! I\'m interested in your laundry and ironing services. Could you provide pricing and pickup options?';
+                    break;
+                case 'gallery':
+                    message = 'Hi! I saw your work gallery and I\'m impressed. I\'d like to get a quote for similar services.';
+                    break;
+                case 'testimonials':
+                    message = 'Hi! I read your client testimonials and would like to experience your excellent service too.';
+                    break;
+                case 'mobile-contact':
+                    message = 'Hi! I\'m contacting you through your mobile menu. I\'d like to know more about your services.';
+                    break;
+                case 'privacy':
+                    message = 'Hi! I would like to know more about your privacy policy and data protection.';
+                    break;
+                case 'terms':
+                    message = 'Hi! I would like to review your terms of service and service agreements.';
+                    break;
+                case 'insurance':
+                    message = 'Hi! I would like to know more about your insurance coverage and bonding information.';
+                    break;
+                default:
+                    message = customMessage || 'Hi! I\'m interested in your cleaning services.';
+            }
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Form submission to WhatsApp
+        function handleWhatsAppSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `Hi! I'm ${name} and I would like to request a quote for cleaning services.
+
+📧 Email: ${email}
+📱 Phone: ${phone}
+🏠 Service: ${service}
+💬 Message: ${message || 'No additional message'}
+
+Please contact me to discuss pricing and availability. Thank you!`;
+            
+            openWhatsApp('form', whatsappMessage);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll helper functions
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function scrollToAbout() {
+            document.getElementById('about').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+
+        // Refresh AOS on window resize
+        window.addEventListener('resize', function() {
+            AOS.refresh();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98bbb5d4e1ea4ed4',t:'MTc1OTk5MDE3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
