@@ -86,7 +86,7 @@ img,video,iframe{max-width:100%;height:auto;display:block}
                     <a href="index.html#contact" class="text-gray-700 hover:text-black transition duration-300">Contact</a>
                 </div>
                 <div class="flex items-center">
-                    <button onclick="openWhatsApp('quote')" class="hidden md:block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300 pulse-animation" data-aos="fade-left" data-aos-delay="300">
+                    <button onclick="goToContact()" class="hidden md:block bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition duration-300 pulse-animation" data-aos="fade-left" data-aos-delay="300">
                         Get Quote
                     </button>
                     <!-- Mobile menu button -->
@@ -560,10 +560,10 @@ img,video,iframe{max-width:100%;height:auto;display:block}
                     Join the hundreds of families and businesses who trust Luxe Domestic Services for their cleaning needs. Let us transform your space into the pristine environment you deserve.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openWhatsApp('about-quote')" class="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition duration-300 pulse-animation">
+                    <button onclick="goToContact()" class="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition duration-300 pulse-animation">
                         Get Your Free Quote
                     </button>
-                    <a href="contact.html" class="border-2 border-black text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-black hover:text-white transition duration-300">
+                    <a href="index.html#contact" class="border-2 border-black text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-black hover:text-white transition duration-300">
                         Contact Us Today
                     </a>
                 </div>
@@ -751,5 +751,15 @@ img,video,iframe{max-width:100%;height:auto;display:block}
             AOS.refresh();
         });
     </script>
+    <script>
+/* send visitor to index.html#contact and highlight the form */
+function goToContact() {
+  // 1. go back to home page with the hash
+  window.location.href = 'index.html#contact';
+
+  // 2. optional: store a flag so index.html can flash the form
+  sessionStorage.setItem('highlightContact', '1');
+}
+</script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98bbe70da3844ed4',t:'MTc1OTk5MjE5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
